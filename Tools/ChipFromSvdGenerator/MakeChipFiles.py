@@ -165,10 +165,10 @@ def parseCompany(path,company):
             filename, file_extension = posixpath.splitext(file)
             if file_extension == ".svd":
                 parseFile(company,filename)
-                
+
 parser = argparse.ArgumentParser(description='Generate chip files')
 parser.add_argument('-f,--file', dest='file', help='file name to parse')
-parser.add_argument('-p,--path', dest='path', default=site.getsitepackages()[1] + '\cmsis_svd\data', help='folder to parse')
+parser.add_argument('-p,--path', dest='path', default=site.getsitepackages()[0] + '\cmsis_svd\data', help='folder to parse')
 parser.add_argument('-c,--company', dest='company', help='company to parse')
 
 args = parser.parse_args()
